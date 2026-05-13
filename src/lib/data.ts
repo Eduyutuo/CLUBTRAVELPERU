@@ -1,7 +1,12 @@
+import heroPremium from "@/assets/hero-premium.jpg";
+import machuPicchu from "@/assets/machu-picchu-premium.jpg";
+import rainbowMountain from "@/assets/rainbow-mountain.jpg";
+import salkantay from "@/assets/salkantay-trek.jpg";
+import tambopata from "@/assets/tambopata-jungle.jpg";
+import arequipa from "@/assets/arequipa-colca.jpg";
+import titicaca from "@/assets/puno-titicaca.jpg";
+import incaTrail from "@/assets/tour-inca-trail.jpg";
 import uyuni from "@/assets/tour-uyuni.jpg";
-import titicaca from "@/assets/tour-titicaca.jpg";
-import tambopata from "@/assets/tour-tambopata.jpg";
-import inca from "@/assets/tour-inca-trail.jpg";
 
 export type Tour = {
   id: string;
@@ -33,7 +38,7 @@ export type Tour = {
 export const toursData: Tour[] = [
   {
     id: "machu-picchu-1-dia",
-    img: inca, // Temp image
+    img: machuPicchu,
     title: {
       es: "1 Día Machu Picchu Full Day: Guía Privado",
       en: "1 Day Machu Picchu Full Day: Private Guide",
@@ -81,96 +86,18 @@ export const toursData: Tour[] = [
     ],
   },
   {
-    id: "cusco-esencial-5-dias",
-    img: uyuni, // Temp image
-    title: {
-      es: "5 Días – Cusco Esencial",
-      en: "5 Days – Essential Cusco",
-    },
-    durationDays: 5,
-    code: "PE2CUZ5-1",
-    minPeople: 2,
-    description: {
-      es: "Explora el corazón del Imperio Inca con este programa de 5 días que combina historia, cultura y paisajes inolvidables. Ruta: Cusco City Tour, Valle Sagrado, Machu Picchu.",
-      en: "Explore the heart of the Inca Empire with this 5-day program that combines history, culture and unforgettable landscapes. Route: Cusco City Tour, Sacred Valley, Machu Picchu.",
-    },
-    itinerary: [
-      {
-        day: 1,
-        title: { es: "¡Bienvenidos a Cusco!", en: "Welcome to Cusco!" },
-        description: {
-          es: "A tu llegada a la ciudad de Cusco, nuestro equipo te recibirá con una cálida bienvenida y traslado privado al hotel. El resto del día será libre para descansar, aclimatarte a la altura o dar un paseo por las encantadoras calles de piedra del centro histórico.\nAlimentación: Ninguna.\nTraslado: Servicio privado.\nAlojamiento: Cusco.",
-          en: "Upon arrival in the city of Cusco, our team will greet you with a warm welcome and private transfer to the hotel. The rest of the day is free to rest, acclimatize to the altitude or take a walk through the charming stone streets of the historic center.\nMeals: None.\nTransfer: Private service.\nAccommodation: Cusco.",
-        },
-      },
-      {
-        day: 2,
-        title: { es: "Valle Sagrado de los Incas", en: "Sacred Valley of the Incas" },
-        description: {
-          es: "El Valle Sagrado te espera con paisajes de ensueño y sitios arqueológicos únicos: Chinchero, Maras, Moray y Ollantaytambo. Disfrutarás de un delicioso almuerzo buffet en Urubamba y, al final del día, viajarás en tren hacia Aguas Calientes, la puerta de entrada a Machu Picchu.\nAlimentación: Desayuno y almuerzo buffet.\nTour: Servicio compartido.\nAlojamiento: Aguas Calientes.",
-          en: "The Sacred Valley awaits you with dream landscapes and unique archaeological sites: Chinchero, Maras, Moray and Ollantaytambo. You will enjoy a delicious buffet lunch in Urubamba and, at the end of the day, you will travel by train to Aguas Calientes, the gateway to Machu Picchu.\nMeals: Breakfast and buffet lunch.\nTour: Shared service.\nAccommodation: Aguas Calientes.",
-        },
-      },
-      {
-        day: 3,
-        title: { es: "Machu Picchu – La Ciudad Perdida", en: "Machu Picchu – The Lost City" },
-        description: {
-          es: "Muy temprano ascenderemos en bus hacia la Ciudadela de Machu Picchu. Acompañado por su guía privado, recorrerá los templos, escalinatas y terrazas de esta joya arqueológica. Tras el recorrido, disfrutará de un almuerzo local y posteriormente emprenderá el regreso a Cusco en servicio bimodal.\nTour: Servicio privado.\nAlimentación: Desayuno y almuerzo.\nAlojamiento: Cusco.",
-          en: "Very early we will ascend by bus to the Citadel of Machu Picchu. Accompanied by your private guide, you will tour the temples, stairways and terraces of this archaeological jewel. After the tour, you will enjoy a local lunch and later start the return to Cusco in bimodal service.\nTour: Private service.\nMeals: Breakfast and lunch.\nAccommodation: Cusco.",
-        },
-      },
-      {
-        day: 4,
-        title: { es: "City Tour Cusco – Historia Viva", en: "Cusco City Tour – Living History" },
-        description: {
-          es: "Descubre la fusión del pasado inca y colonial en un recorrido lleno de historia: Coricancha (Templo del Sol), Sacsayhuamán, Qenqo, y Puca Pucará.\nAlimentación: Desayuno.\nTour: Servicio compartido.\nAlojamiento: Cusco.",
-          en: "Discover the fusion of the Inca and colonial past in a tour full of history: Coricancha (Temple of the Sun), Sacsayhuaman, Qenqo, and Puca Pucara.\nMeals: Breakfast.\nTour: Shared service.\nAccommodation: Cusco.",
-        },
-      },
-      {
-        day: 5,
-        title: { es: "¡Hasta pronto, Perú!", en: "See you soon, Peru!" },
-        description: {
-          es: "A la hora indicada, nuestro equipo pasará por tu hotel para llevarte al aeropuerto. ¡Despídete de Cusco con la certeza de haber vivido una experiencia única!\nAlimentación: Desayuno.\nTraslado: Servicio privado.",
-          en: "At the indicated time, our team will pick you up from your hotel to take you to the airport. Say goodbye to Cusco with the certainty of having lived a unique experience!\nMeals: Breakfast.\nTransfer: Private service.",
-        },
-      },
-    ],
-    prices: [
-      { label: { es: "Tarifa 1 (Hoteles 3★) - Doble", en: "Rate 1 (3★ Hotels) - Double" }, price: 592 },
-      { label: { es: "Tarifa 2 (Hoteles 3★ superior) - Doble", en: "Rate 2 (Superior 3★ Hotels) - Double" }, price: 617 },
-      { label: { es: "Tarifa 3 (Hoteles 4★) - Doble", en: "Rate 3 (4★ Hotels) - Double" }, price: 669 },
-    ],
-    includes: [
-      { es: "Traslados completos (hoteles, aeropuertos, estaciones y puertos)", en: "Complete transfers (hotels, airports, stations and ports)" },
-      { es: "03 noches en Cusco + 01 noche en Aguas Calientes (desayunos incluidos)", en: "03 nights in Cusco + 01 night in Aguas Calientes (breakfasts included)" },
-      { es: "Tours con ingresos y transporte turístico", en: "Tours with entrances and tourist transport" },
-      { es: "Tour a Machu Picchu en servicio privado con guía certificado", en: "Machu Picchu tour in private service with certified guide" },
-      { es: "Guías oficiales acreditados por MINCETUR", en: "Official guides accredited by MINCETUR" },
-      { es: "Alimentación según programa", en: "Meals according to program" },
-      { es: "Cargos hoteleros incluidos (exoneración IGV para turistas)", en: "Hotel charges included (IGV exemption for tourists)" },
-      { es: "Asistencia permanente durante todo el viaje", en: "Permanent assistance throughout the trip" },
-    ],
-    excludes: [
-      { es: "Boletos aéreos internacionales o nacionales", en: "International or domestic flights" },
-      { es: "Servicios opcionales", en: "Optional services" },
-      { es: "Alimentación no mencionada", en: "Meals not mentioned" },
-      { es: "Seguros, propinas y gastos personales", en: "Insurance, tips and personal expenses" },
-    ],
-  },
-  {
     id: "cusco-inolvidable-5-dias",
-    img: inca,
+    img: rainbowMountain,
     title: {
-      es: "5 Días – Cusco Inolvidable",
-      en: "5 Days – Unforgettable Cusco",
+      es: "5 Días – Cusco Inolvidable & Vinicunca",
+      en: "5 Days – Unforgettable Cusco & Rainbow Mountain",
     },
     durationDays: 5,
     code: "PE2CUZ5-2",
     minPeople: 2,
     description: {
-      es: "Vive la magia de Cusco, el Valle Sagrado y Machu Picchu, culminando con la impresionante Montaña de Colores.",
-      en: "Live the magic of Cusco, the Sacred Valley and Machu Picchu, culminating with the impressive Rainbow Mountain.",
+      es: "Vive la magia de Cusco, el Valle Sagrado y Machu Picchu, culminando con la impresionante Montaña de Colores (Vinicunca).",
+      en: "Live the magic of Cusco, the Sacred Valley and Machu Picchu, culminating with the impressive Rainbow Mountain (Vinicunca).",
     },
     itinerary: [
       { day: 1, title: { es: "Bienvenidos a Cusco", en: "Welcome to Cusco" }, description: { es: "Traslado privado y tarde de aclimatación.", en: "Private transfer and afternoon of acclimatization." } },
@@ -185,7 +112,7 @@ export const toursData: Tour[] = [
   },
   {
     id: "salkantay-trek-5-dias",
-    img: inca,
+    img: salkantay,
     title: {
       es: "Salkantay Trek 5 Días: Sky Domes Experience",
       en: "Salkantay Trek 5 Days: Sky Domes Experience",
@@ -194,8 +121,8 @@ export const toursData: Tour[] = [
     code: "PE53CUZ-1",
     minPeople: 2,
     description: {
-      es: "Una de las rutas de trekking más espectaculares del mundo, con campamentos de lujo tipo Sky Domes.",
-      en: "One of the most spectacular trekking routes in the world, with luxury Sky Domes campings.",
+      es: "Una de las rutas de trekking más espectaculares del mundo, con campamentos de lujo tipo Sky Domes y vistas del nevado Salkantay.",
+      en: "One of the most spectacular trekking routes in the world, with luxury Sky Domes campings and views of Salkantay mountain.",
     },
     itinerary: [
       { day: 1, title: { es: "Cusco - Laguna Humantay", en: "Cusco - Humantay Lake" }, description: { es: "Caminata hacia la laguna turquesa y noche en Sky Domes.", en: "Hike to the turquoise lake and night in Sky Domes." } },
@@ -209,22 +136,118 @@ export const toursData: Tour[] = [
     excludes: [{ es: "Bolsa de dormir", en: "Sleeping bag" }],
   },
   {
-    id: "aventura-andina-tambopata",
-    img: tambopata,
+    id: "arequipa-colca-2-dias",
+    img: arequipa,
     title: {
-      es: "Machu Picchu y Amazonía en Tambopata",
-      en: "Machu Picchu & Tambopata Amazon",
+      es: "2 Días – Arequipa & Cañón del Colca",
+      en: "2 Days – Arequipa & Colca Canyon",
     },
-    durationDays: 8,
-    code: "PE2CUZ8-1",
+    durationDays: 2,
+    code: "PE-AQP-02",
     minPeople: 2,
     description: {
-      es: "Combina la historia de los Incas con la biodiversidad extrema de la selva peruana.",
-      en: "Combine Inca history with the extreme biodiversity of the Peruvian jungle.",
+      es: "Descubre la Ciudad Blanca y el vuelo majestuoso del Cóndor en uno de los cañones más profundos del mundo.",
+      en: "Discover the White City and the majestic flight of the Condor in one of the deepest canyons in the world.",
     },
-    itinerary: [],
-    prices: [{ label: { es: "Desde", en: "Starting from" }, price: 1071 }],
-    includes: [],
-    excludes: [],
-  }
+    itinerary: [
+      { day: 1, title: { es: "Arequipa - Chivay", en: "Arequipa - Chivay" }, description: { es: "Viaje por la Reserva de Salinas y Aguada Blanca. Baños termales.", en: "Trip through Salinas and Aguada Blanca Reserve. Hot springs." } },
+      { day: 2, title: { es: "Cruz del Cóndor - Arequipa", en: "Condor Cross - Arequipa" }, description: { es: "Avistamiento de cóndores y retorno a la Ciudad Blanca.", en: "Condor sighting and return to the White City." } },
+    ],
+    prices: [{ label: { es: "Desde", en: "Starting from" }, price: 145 }],
+    includes: [{ es: "Transporte, guía y 1 noche de hotel", en: "Transport, guide and 1 night hotel" }],
+    excludes: [{ es: "Boleto turístico y entradas a baños termales", en: "Tourist ticket and hot springs entrance" }],
+  },
+  {
+    id: "puno-titicaca-2-dias",
+    img: titicaca,
+    title: {
+      es: "2 Días – Puno: Uros, Amantaní & Taquile",
+      en: "2 Days – Puno: Uros, Amantani & Taquile",
+    },
+    durationDays: 2,
+    code: "PE-PUN-02",
+    minPeople: 1,
+    description: {
+      es: "Vive una experiencia auténtica durmiendo en una isla del Lago Titicaca con una familia local.",
+      en: "Live an authentic experience sleeping on an island in Lake Titicaca with a local family.",
+    },
+    itinerary: [
+      { day: 1, title: { es: "Uros - Amantaní", en: "Uros - Amantani" }, description: { es: "Visita a las islas flotantes y noche con familia local.", en: "Visit to floating islands and night with local family." } },
+      { day: 2, title: { es: "Taquile - Puno", en: "Taquile - Puno" }, description: { es: "Caminata por Taquile y retorno a Puno.", en: "Hike through Taquile and return to Puno." } },
+    ],
+    prices: [{ label: { es: "Desde", en: "Starting from" }, price: 95 }],
+    includes: [{ es: "Traslados, lancha, alimentación y hospedaje familiar", en: "Transfers, boat, meals and family stay" }],
+    excludes: [{ es: "Cena extra", en: "Extra dinner" }],
+  },
+  {
+    id: "tambopata-reserva-3-dias",
+    img: tambopata,
+    title: {
+      es: "3 Días – Selva de Tambopata: Lago Sandoval",
+      en: "3 Days – Tambopata Jungle: Sandoval Lake",
+    },
+    durationDays: 3,
+    code: "PE-TAM-03",
+    minPeople: 2,
+    description: {
+      es: "Sumérgete en la biodiversidad de la Amazonía peruana en un lodge exclusivo.",
+      en: "Immerse yourself in the biodiversity of the Peruvian Amazon in an exclusive lodge.",
+    },
+    itinerary: [
+      { day: 1, title: { es: "Puerto Maldonado - Lodge", en: "Puerto Maldonado - Lodge" }, description: { es: "Traslado en lancha y caminata nocturna.", en: "Boat transfer and night walk." } },
+      { day: 2, title: { es: "Lago Sandoval", en: "Sandoval Lake" }, description: { es: "Avistamiento de nutrias gigantes y monos.", en: "Sighting of giant otters and monkeys." } },
+      { day: 3, title: { es: "Lodge - Aeropuerto", en: "Lodge - Airport" }, description: { es: "Retorno a la ciudad.", en: "Return to the city." } },
+    ],
+    prices: [{ label: { es: "Desde", en: "Starting from" }, price: 385 }],
+    includes: [{ es: "Todo incluido (alojamiento, tours, comidas)", en: "All included (accommodation, tours, meals)" }],
+    excludes: [{ es: "Vuelos", en: "Flights" }],
+  },
+  {
+    id: "inca-trail-4-dias",
+    img: incaTrail,
+    title: {
+      es: "Camino Inca Clásico 4 Días",
+      en: "Classic Inca Trail 4 Days",
+    },
+    durationDays: 4,
+    code: "PE-ICT-04",
+    minPeople: 2,
+    description: {
+      es: "La ruta de senderismo más famosa de Sudamérica. Camina por senderos originales incas hasta llegar a la Puerta del Sol.",
+      en: "The most famous trekking route in South America. Walk through original Inca trails until you reach the Sun Gate.",
+    },
+    itinerary: [
+      { day: 1, title: { es: "Cusco - Km 82", en: "Cusco - Km 82" }, description: { es: "Inicio de la caminata y primer campamento.", en: "Start of the hike and first camp." } },
+      { day: 2, title: { es: "Abra Warmiwañusca", en: "Warmiwañusca Pass" }, description: { es: "El punto más alto de la ruta (4,215 msnm).", en: "The highest point of the route (4,215 msl)." } },
+      { day: 3, title: { es: "Sayacmarca - Wiñay Wayna", en: "Sayacmarca - Wiñay Wayna" }, description: { es: "Exploración de sitios arqueológicos impresionantes.", en: "Exploration of impressive archaeological sites." } },
+      { day: 4, title: { es: "Inti Punku - Machu Picchu", en: "Inti Punku - Machu Picchu" }, description: { es: "Entrada triunfal a la ciudadela al amanecer.", en: "Triumphant entry to the citadel at dawn." } },
+    ],
+    prices: [{ label: { es: "Precio por persona", en: "Price per person" }, price: 699 }],
+    includes: [{ es: "Permisos, guía, porteadores y alimentación", en: "Permits, guide, porters and meals" }],
+    excludes: [{ es: "Bolsa de dormir", en: "Sleeping bag" }],
+  },
+  {
+    id: "salar-uyuni-3-dias",
+    img: uyuni,
+    title: {
+      es: "Salar de Uyuni & Lagunas de Colores 3 Días",
+      en: "Uyuni Salt Flats & Colored Lagoons 3 Days",
+    },
+    durationDays: 3,
+    code: "BO-UYU-03",
+    minPeople: 1,
+    description: {
+      es: "Explora el espejo más grande del mundo y los paisajes surrealistas del altiplano boliviano.",
+      en: "Explore the world's largest mirror and the surreal landscapes of the Bolivian highlands.",
+    },
+    itinerary: [
+      { day: 1, title: { es: "Cementerio de Trenes - Salar", en: "Train Cemetery - Salt Flat" }, description: { es: "Visita al Salar y pernocte en hotel de sal.", en: "Visit to the Salt Flat and overnight in a salt hotel." } },
+      { day: 2, title: { es: "Lagunas Altiplánicas", en: "Highland Lagoons" }, description: { es: "Laguna Colorada y géiseres Sol de Mañana.", en: "Colorada Lagoon and Sol de Mañana geysers." } },
+      { day: 3, title: { es: "Laguna Verde - Uyuni", en: "Verde Lagoon - Uyuni" }, description: { es: "Vistas del volcán Licancabur y retorno.", en: "Views of Licancabur volcano and return." } },
+    ],
+    prices: [{ label: { es: "Desde", en: "Starting from" }, price: 195 }],
+    includes: [{ es: "Transporte 4x4, guía y alimentación", en: "4x4 transport, guide and meals" }],
+    excludes: [{ es: "Entradas a parques nacionales", en: "Entrance fees to national parks" }],
+  },
 ];
+export { heroPremium };

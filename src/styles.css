@@ -62,38 +62,43 @@
 }
 
 :root {
-  --radius: 0.75rem;
-  --background: oklch(0.985 0.005 90);
-  --foreground: oklch(0.22 0.03 60);
+  --radius: 1rem;
+  --background: oklch(0.98 0.01 85);
+  --foreground: oklch(0.25 0.03 60);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.03 60);
+  --card-foreground: oklch(0.25 0.03 60);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.03 60);
-  /* Primary: deep jungle green */
-  --primary: oklch(0.42 0.09 150);
-  --primary-foreground: oklch(0.985 0.005 90);
-  /* Secondary: warm earth/terracotta */
-  --secondary: oklch(0.94 0.02 70);
-  --secondary-foreground: oklch(0.3 0.06 50);
-  --muted: oklch(0.96 0.01 80);
-  --muted-foreground: oklch(0.45 0.03 60);
-  /* Accent: andean terracotta */
-  --accent: oklch(0.62 0.14 45);
-  --accent-foreground: oklch(0.985 0.005 90);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.9 0.015 80);
-  --input: oklch(0.92 0.015 80);
-  --ring: oklch(0.42 0.09 150);
-  --jungle: oklch(0.42 0.09 150);
-  --jungle-deep: oklch(0.32 0.08 150);
-  --earth: oklch(0.55 0.1 55);
-  --terracotta: oklch(0.62 0.14 45);
-  --sand: oklch(0.92 0.03 80);
-  --gradient-hero: linear-gradient(180deg, oklch(0.22 0.03 60 / 0.2) 0%, oklch(0.18 0.04 60 / 0.75) 100%);
-  --gradient-earth: linear-gradient(135deg, var(--terracotta), var(--earth));
-  --shadow-card: 0 10px 30px -12px oklch(0.3 0.05 60 / 0.18);
-  --shadow-elegant: 0 20px 50px -20px oklch(0.32 0.08 150 / 0.35);
+  --popover-foreground: oklch(0.25 0.03 60);
+  /* Primary: deep forest jungle green */
+  --primary: oklch(0.38 0.1 160);
+  --primary-foreground: oklch(0.98 0.01 85);
+  /* Secondary: soft warm sand */
+  --secondary: oklch(0.94 0.03 85);
+  --secondary-foreground: oklch(0.35 0.08 50);
+  --muted: oklch(0.95 0.02 85);
+  --muted-foreground: oklch(0.45 0.04 60);
+  /* Accent: rich andean terracotta */
+  --accent: oklch(0.6 0.15 45);
+  --accent-foreground: oklch(0.98 0.01 85);
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.9 0.02 85);
+  --input: oklch(0.92 0.02 85);
+  --ring: oklch(0.38 0.1 160);
+  
+  /* Semantic Brand Colors */
+  --jungle: oklch(0.38 0.1 160);
+  --jungle-deep: oklch(0.28 0.08 160);
+  --earth: oklch(0.52 0.12 55);
+  --terracotta: oklch(0.6 0.15 45);
+  --sand: oklch(0.94 0.03 85);
+  
+  /* Gradients & Shadows */
+  --gradient-hero: linear-gradient(180deg, oklch(0.2 0.05 160 / 0.1) 0%, oklch(0.15 0.05 160 / 0.8) 100%);
+  --gradient-warm: linear-gradient(135deg, var(--terracotta), var(--earth));
+  --shadow-card: 0 12px 40px -15px oklch(0.25 0.05 60 / 0.12);
+  --shadow-premium: 0 25px 60px -25px oklch(0.38 0.1 160 / 0.25);
+  
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);

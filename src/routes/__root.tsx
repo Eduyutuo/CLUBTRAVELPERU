@@ -108,12 +108,28 @@ function RootShell({ children }: { children: React.ReactNode }) {
   );
 }
 
+import { I18nProvider } from "@/lib/i18n";
+import { Navbar } from "@/components/site/Navbar";
+import { Footer } from "@/components/site/Footer";
+import { WhatsAppButton } from "@/components/site/WhatsAppButton";
+import { Toaster } from "@/components/ui/sonner";
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <I18nProvider>
+        <div className="min-h-screen bg-background">
+          <Navbar />
+          <main>
+            <Outlet />
+          </main>
+          <Footer />
+          <WhatsAppButton />
+          <Toaster position="top-center" />
+        </div>
+      </I18nProvider>
     </QueryClientProvider>
   );
 }

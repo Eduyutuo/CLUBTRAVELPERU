@@ -9,13 +9,13 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Escríbenos por WhatsApp"
-      className="fixed bottom-6 right-6 z-40 group"
+      className="fixed bottom-8 right-8 z-[100] group"
     >
-      <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-30" />
-      <span className="relative flex items-center gap-2 pl-4 pr-5 h-14 rounded-full bg-[#25D366] text-white shadow-lg hover:scale-105 transition-transform">
-        <MessageCircle className="w-6 h-6 fill-white shrink-0" />
-        <span className="text-sm font-semibold whitespace-nowrap hidden group-hover:inline transition-all">
-          WhatsApp
+      <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-25" />
+      <span className="relative flex items-center justify-center w-20 h-20 rounded-full bg-[#25D366] text-white shadow-2xl transition-all duration-300 group-hover:rounded-3xl group-hover:scale-110">
+        <MessageCircle className="w-10 h-10 fill-current" />
+        <span className="absolute right-full mr-6 py-3 px-6 bg-white text-foreground text-sm font-bold rounded-2xl shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap border border-border/50">
+          ¿En qué podemos ayudarte?
         </span>
       </span>
     </a>
