@@ -1,24 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { toursData } from "@/lib/data";
-import { I18nProvider, useI18n } from "@/lib/i18n";
-import { Navbar } from "@/components/site/Navbar";
-import { Footer } from "@/components/site/Footer";
-import { WhatsAppButton } from "@/components/site/WhatsAppButton";
+import { useI18n } from "@/lib/i18n";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Clock, Users, Check, X, MapPin, Calendar, ShieldCheck, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const Route = createFileRoute("/tours/$tourId")({
-  component: TourPageWrapper,
+  component: TourDetail,
 });
-
-function TourPageWrapper() {
-  return (
-    <I18nProvider>
-      <TourDetail />
-    </I18nProvider>
-  );
-}
 
 function TourDetail() {
   const { tourId } = Route.useParams();
@@ -28,22 +17,18 @@ function TourDetail() {
 
   if (!tour) {
     return (
-      <div className="min-h-screen bg-background flex flex-col items-center justify-center">
-        <Navbar />
-        <h1 className="text-3xl font-bold mt-20">Tour no encontrado</h1>
+      <div className="min-h-[70vh] flex flex-col items-center justify-center px-6 text-center">
+        <h1 className="text-3xl font-bold">Tour no encontrado</h1>
         <Button asChild className="mt-4 rounded-full">
           <Link to="/">Volver al inicio</Link>
         </Button>
-        <Footer />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
-      <Navbar />
-
-      <main className="flex-1">
+    <div className="bg-background">
+      <main>
         {/* Immersive Hero Section */}
         <section className="relative w-full h-[60vh] md:h-[75vh] overflow-hidden">
           <img
@@ -260,9 +245,6 @@ function TourDetail() {
           </div>
         </section>
       </main>
-
-      <Footer />
-      <WhatsAppButton />
     </div>
   );
 }
