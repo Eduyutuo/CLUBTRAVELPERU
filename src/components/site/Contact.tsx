@@ -71,17 +71,6 @@ export function Contact() {
               </select>
             </div>
           </div>
-          <div className="space-y-2">
-            <Label htmlFor="message">{t.contact.message}</Label>
-            <textarea
-              id="message"
-              name="message"
-              rows={4}
-              maxLength={1000}
-              placeholder={t.contact.messagePlaceholder}
-              className="flex w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-xs transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring resize-none"
-            />
-          </div>
           <Button
             type="submit"
             disabled={submitting}
