@@ -36,8 +36,10 @@ const dict = {
       email: "Correo electrónico",
       phone: "Teléfono / WhatsApp",
       destination: "Destino de interés",
-      destinations: ["Machu Picchu", "Salar de Uyuni", "Lago Titicaca", "Amazonía", "Camino Inca", "Otro"],
-      submit: "Solicitar Cotización Gratuita",
+      destinations: ["Machu Picchu", "Salar de Uyuni", "Lago Titicaca", "Amazonía", "Camino Inca", "Salkantay", "Lima", "Otro"],
+      message: "Mensaje",
+      messagePlaceholder: "Cuéntanos qué tipo de experiencia buscas…",
+      submit: "Solicitar Cotización",
       success: "¡Recibimos tu solicitud! Te contactaremos pronto.",
     },
     footer: {
