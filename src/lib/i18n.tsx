@@ -83,8 +83,10 @@ const dict = {
       email: "Email address",
       phone: "Phone / WhatsApp",
       destination: "Destination of interest",
-      destinations: ["Machu Picchu", "Salar de Uyuni", "Lake Titicaca", "Amazon", "Inca Trail", "Other"],
-      submit: "Request Free Quote",
+      destinations: ["Machu Picchu", "Salar de Uyuni", "Lake Titicaca", "Amazon", "Inca Trail", "Salkantay", "Lima", "Other"],
+      message: "Message",
+      messagePlaceholder: "Tell us what kind of experience you're looking for…",
+      submit: "Request Quote",
       success: "We got your request! We'll be in touch soon.",
     },
     footer: {
