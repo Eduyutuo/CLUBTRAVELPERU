@@ -144,17 +144,17 @@ function TourDetail() {
                   </h2>
                 </div>
                 
-                <div className="space-y-4 relative before:absolute before:left-6 before:top-4 before:bottom-4 before:w-[2px] before:bg-gradient-to-b before:from-accent/50 before:to-primary/50">
+                <div className="space-y-4 relative before:absolute before:left-5 sm:before:left-6 before:top-4 before:bottom-4 before:w-[2px] before:bg-gradient-to-b before:from-accent/50 before:to-primary/50">
                   {tour.itinerary.map((day) => (
-                    <div key={day.day} className="relative pl-16 group">
-                      <div className="absolute left-0 top-2 w-12 h-12 bg-background border-2 border-accent text-accent rounded-full flex items-center justify-center font-black text-lg z-10 group-hover:bg-accent group-hover:text-white transition-all shadow-sm">
+                    <div key={day.day} className="relative pl-12 sm:pl-16 group">
+                      <div className="absolute left-0 top-2 w-10 h-10 sm:w-12 sm:h-12 bg-background border-2 border-accent text-accent rounded-full flex items-center justify-center font-black text-sm sm:text-lg z-10 group-hover:bg-accent group-hover:text-white transition-all shadow-sm">
                         {day.day}
                       </div>
-                      <div className="bg-card border border-border/50 p-8 rounded-[2rem] shadow-sm hover:shadow-md transition-all group-hover:border-accent/20">
-                        <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-accent transition-colors">
+                      <div className="bg-card border border-border/50 p-6 sm:p-8 rounded-[2rem] shadow-sm hover:shadow-md transition-all group-hover:border-accent/20">
+                        <h3 className="text-lg sm:text-xl font-bold mb-3 text-foreground group-hover:text-accent transition-colors">
                           {lang === "es" ? day.title.es : day.title.en}
                         </h3>
-                        <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
+                        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed whitespace-pre-line">
                           {lang === "es" ? day.description.es : day.description.en}
                         </p>
                       </div>

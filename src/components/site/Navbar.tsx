@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Globe } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { Link, useLocation } from "@tanstack/react-router";
+import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
   { id: "/", key: "home" as const },
@@ -100,49 +101,60 @@ export function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      {open && (
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="md:hidden absolute top-full inset-x-0 bg-background/95 backdrop-blur-2xl border-b border-border/50 overflow-hidden"
-        >
-          <nav className="container mx-auto px-6 py-8 flex flex-col gap-6">
-            {links.map((l) => (
-              <Link 
-                key={l.id} 
-                to={l.id} 
-                className="text-lg font-bold text-foreground hover:text-accent transition-colors"
-                onClick={() => setOpen(false)}
-              >
-                {t.nav[l.key]}
-              </Link>
-            ))}
-            <div className="h-[1px] w-full bg-border/50" />
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <Globe className="w-4 h-4 text-accent" />
-                <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Idioma</span>
-              </div>
-              <div className="flex gap-2">
-                {(["es", "en"] as const).map((l) => (
-                  <button
-                    key={l}
-                    onClick={() => { setLang(l); setOpen(false); }}
-                    className={`px-4 py-2 text-xs font-bold uppercase rounded-xl border ${
-                      lang === l ? "bg-accent text-white border-accent" : "border-border text-muted-foreground"
-                    }`}
+      <AnimatePresence>
+        {open && (
+          <motion.div 
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="md:hidden absolute top-full inset-x-0 bg-background/95 backdrop-blur-2xl border-b border-border/50 overflow-hidden shadow-xl"
+          >
+            <nav className="container mx-auto px-6 py-10 flex flex-col gap-6 max-h-[calc(100vh-80px)] overflow-y-auto">
+              {links.map((l, i) => (
+                <motion.div
+                  key={l.id}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                >
+                  <Link 
+                    to={l.id} 
+                    className="text-2xl font-black text-foreground hover:text-accent transition-colors flex items-center justify-between"
+                    onClick={() => setOpen(false)}
                   >
-                    {l}
-                  </button>
-                ))}
+                    {t.nav[l.key]}
+                    <div className="w-8 h-[2px] bg-accent/20" />
+                  </Link>
+                </motion.div>
+              ))}
+              <div className="h-[1px] w-full bg-border/50 my-2" />
+              <div className="flex flex-col gap-4">
+                <div className="flex items-center gap-2">
+                  <Globe className="w-4 h-4 text-accent" />
+                  <span className="text-xs font-black text-muted-foreground uppercase tracking-[0.2em]">Seleccionar Idioma</span>
+                </div>
+                <div className="flex gap-3">
+                  {(["es", "en"] as const).map((l) => (
+                    <button
+                      key={l}
+                      onClick={() => { setLang(l); setOpen(false); }}
+                      className={`flex-1 py-4 text-sm font-black uppercase rounded-2xl border-2 transition-all ${
+                        lang === l ? "bg-accent text-white border-accent shadow-premium" : "border-border/50 text-muted-foreground hover:border-accent/30"
+                      }`}
+                    >
+                      {l === "es" ? "Español" : "English"}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
-            <Button asChild className="bg-accent hover:bg-accent/90 text-white rounded-2xl h-14 text-lg font-bold shadow-premium">
-              <Link to="/contact" onClick={() => setOpen(false)}>{t.nav.cta}</Link>
-            </Button>
-          </nav>
-        </motion.div>
-      )}
+              <Button asChild className="bg-accent hover:bg-accent/90 text-white rounded-[2rem] h-16 text-lg font-black shadow-premium mt-4">
+                <Link to="/contact" onClick={() => setOpen(false)}>{t.nav.cta}</Link>
+              </Button>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

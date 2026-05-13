@@ -58,7 +58,7 @@ function BenefitCard({ title, desc, icon: Icon, index }: { title: string; desc: 
         rotateY,
         transformStyle: "preserve-3d",
       }}
-      className="relative p-10 rounded-[3rem] bg-card border border-border/50 transition-all duration-500 hover:border-accent/40 group shadow-sm hover:shadow-premium cursor-default"
+      className="relative p-6 sm:p-10 rounded-[2.5rem] sm:rounded-[3rem] bg-card border border-border/50 transition-all duration-500 hover:border-accent/40 group shadow-sm hover:shadow-premium cursor-default"
     >
       <div style={{ transform: "translateZ(50px)" }} className="relative z-10">
         <div className="w-20 h-20 rounded-3xl bg-accent/5 text-accent flex items-center justify-center mb-10 group-hover:bg-accent group-hover:text-white transition-all duration-500 group-hover:scale-110 shadow-sm">
@@ -167,10 +167,10 @@ export function About() {
               initial={{ x: 20, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="absolute -bottom-10 -left-10 bg-white p-10 rounded-[3rem] shadow-premium border border-border/40 text-center z-20"
+              className="absolute sm:-bottom-10 sm:-left-10 bottom-4 left-4 bg-white p-6 sm:p-10 rounded-[2.5rem] sm:rounded-[3rem] shadow-premium border border-border/40 text-center z-20"
             >
-              <span className="block text-6xl font-black text-accent leading-none tracking-tighter">15+</span>
-              <span className="text-xs font-black text-muted-foreground uppercase tracking-[0.2em] mt-3 block">{t.about.yearsExperience}</span>
+              <span className="block text-4xl sm:text-6xl font-black text-accent leading-none tracking-tighter">15+</span>
+              <span className="text-[10px] font-black text-muted-foreground uppercase tracking-[0.2em] mt-2 sm:mt-3 block">{t.about.yearsExperience}</span>
             </motion.div>
 
             {/* Small Floating Element */}

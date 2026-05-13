@@ -11,7 +11,7 @@ export function Footer() {
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-12 gap-16 mb-20">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-20">
           <div className="lg:col-span-5 space-y-8">
             <Link to="/" className="flex items-center gap-4 group">
               <div className="bg-white p-2 rounded-2xl shadow-lg transition-transform group-hover:scale-105">

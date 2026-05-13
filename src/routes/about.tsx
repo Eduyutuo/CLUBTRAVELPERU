@@ -53,7 +53,7 @@ function AboutPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-7xl md:text-9xl font-black tracking-tighter uppercase"
+            className="text-5xl md:text-8xl lg:text-9xl font-black tracking-tighter uppercase"
           >
             CLUB <span className="text-accent">TRAVEL PERÚ</span>
           </motion.h1>
@@ -107,12 +107,12 @@ function AboutPage() {
               />
             </div>
             {/* Experience Floating Card */}
-            <div className="absolute -bottom-10 -left-10 bg-white p-12 rounded-[3.5rem] shadow-premium border border-border/40 text-center z-20">
-              <div className="w-16 h-16 rounded-3xl bg-accent/10 text-accent flex items-center justify-center mx-auto mb-4">
-                <Star className="w-8 h-8 fill-current" />
+            <div className="absolute sm:-bottom-10 sm:-left-10 bottom-4 left-4 bg-white p-8 sm:p-12 rounded-[2.5rem] sm:rounded-[3.5rem] shadow-premium border border-border/40 text-center z-20">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl sm:rounded-3xl bg-accent/10 text-accent flex items-center justify-center mx-auto mb-4">
+                <Star className="w-6 h-6 sm:w-8 sm:h-8 fill-current" />
               </div>
-              <span className="block text-6xl font-black text-foreground leading-none tracking-tighter">15+</span>
-              <span className="text-xs font-black text-muted-foreground uppercase tracking-[0.2em] mt-4 block">{t.about.yearsExperience}</span>
+              <span className="block text-4xl sm:text-6xl font-black text-foreground leading-none tracking-tighter">15+</span>
+              <span className="text-[10px] font-black text-muted-foreground uppercase tracking-[0.2em] mt-3 sm:mt-4 block">{t.about.yearsExperience}</span>
             </div>
           </motion.div>
         </div>

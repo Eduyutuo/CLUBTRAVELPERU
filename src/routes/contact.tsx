@@ -19,11 +19,11 @@ function ContactPage() {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-black tracking-tighter"
+            className="text-4xl md:text-7xl font-black tracking-tighter"
           >
             {lang === "es" ? "¿Hablamos?" : "Let's Talk"}
           </motion.h1>
-          <p className="text-xl text-white/70 max-w-2xl mx-auto font-medium">
+          <p className="text-xl text-white/70 max-w-2xl mx-auto font-medium px-4">
             {lang === "es" 
               ? "Estamos aquí para diseñar tu próximo gran recuerdo. Contáctanos por cualquier medio."
               : "We are here to design your next great memory. Contact us by any means."}
@@ -88,9 +88,20 @@ function ContactPage() {
             <div className="p-8 rounded-[2.5rem] bg-card border border-border/50">
               <h3 className="font-black text-foreground mb-6 uppercase tracking-widest text-xs">Síguenos</h3>
               <div className="flex gap-4">
-                {[Facebook, Instagram, Youtube].map((Icon, i) => (
-                  <a key={i} href="#" className="w-12 h-12 rounded-2xl bg-white border border-border/50 flex items-center justify-center hover:bg-accent hover:text-white hover:border-accent transition-all shadow-sm">
-                    <Icon className="w-5 h-5" />
+                {[
+                  { icon: Facebook, href: "https://www.facebook.com/Clubtravelperu" },
+                  { icon: Instagram, href: "https://www.instagram.com/clubtravelperu" },
+                  { 
+                    icon: () => (
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+                      </svg>
+                    ), 
+                    href: "https://www.tiktok.com/@clubtravelperu2?lang=en" 
+                  },
+                ].map((social, i) => (
+                  <a key={i} href={social.href} target="_blank" rel="noreferrer" className="w-12 h-12 rounded-2xl bg-white border border-border/50 flex items-center justify-center hover:bg-accent hover:text-white hover:border-accent transition-all shadow-sm">
+                    {typeof social.icon === 'function' ? <social.icon /> : <social.icon className="w-5 h-5" />}
                   </a>
                 ))}
               </div>
@@ -102,24 +113,24 @@ function ContactPage() {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white p-10 md:p-16 rounded-[3.5rem] shadow-premium border border-border/40"
+              className="bg-white p-8 sm:p-16 rounded-[3.5rem] shadow-premium border border-border/40"
             >
               <h2 className="text-3xl font-black text-foreground mb-10 tracking-tight">Envíanos un mensaje</h2>
               <form className="grid sm:grid-cols-2 gap-8">
                 <div className="space-y-2">
                   <label className="text-xs font-black uppercase tracking-widest text-muted-foreground ml-1">Nombre Completo</label>
-                  <input type="text" className="w-full h-14 px-6 rounded-2xl bg-muted/50 border-none focus:ring-2 focus:ring-accent transition-all" />
+                  <input type="text" className="w-full h-14 px-6 rounded-2xl bg-muted/50 border-none focus:ring-2 focus:ring-accent transition-all outline-none" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs font-black uppercase tracking-widest text-muted-foreground ml-1">Email</label>
-                  <input type="email" className="w-full h-14 px-6 rounded-2xl bg-muted/50 border-none focus:ring-2 focus:ring-accent transition-all" />
+                  <input type="email" className="w-full h-14 px-6 rounded-2xl bg-muted/50 border-none focus:ring-2 focus:ring-accent transition-all outline-none" />
                 </div>
                 <div className="space-y-2 sm:col-span-2">
                   <label className="text-xs font-black uppercase tracking-widest text-muted-foreground ml-1">Mensaje</label>
-                  <textarea rows={6} className="w-full p-6 rounded-3xl bg-muted/50 border-none focus:ring-2 focus:ring-accent transition-all resize-none" />
+                  <textarea rows={6} className="w-full p-6 rounded-3xl bg-muted/50 border-none focus:ring-2 focus:ring-accent transition-all resize-none outline-none" />
                 </div>
                 <div className="sm:col-span-2">
-                  <Button className="w-full h-16 rounded-2xl bg-accent hover:bg-accent/90 text-white font-black text-lg shadow-premium flex items-center justify-center gap-3">
+                  <Button className="w-full h-16 rounded-2xl bg-accent hover:bg-accent/90 text-white font-black text-lg shadow-premium flex items-center justify-center gap-3 transition-transform active:scale-95">
                     <Send className="w-5 h-5" />
                     Enviar Mensaje
                   </Button>
@@ -132,13 +143,13 @@ function ContactPage() {
 
       {/* Map Area */}
       <section className="container mx-auto px-6 py-24">
-        <div className="rounded-[4rem] overflow-hidden aspect-[21/9] bg-muted relative group border border-border/50">
-          <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2000" className="w-full h-full object-cover grayscale opacity-50" />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="bg-white/80 backdrop-blur-md p-10 rounded-[3rem] shadow-premium border border-white/20 text-center max-w-md">
-              <MapPin className="w-12 h-12 text-accent mx-auto mb-4" />
-              <h3 className="text-2xl font-black text-foreground mb-2">Sede Central</h3>
-              <p className="text-muted-foreground font-medium">Calle Rinconada 121, La Molina, Lima</p>
+        <div className="rounded-[4rem] overflow-hidden aspect-video lg:aspect-[21/9] bg-muted relative group border border-border/50">
+          <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2000" className="w-full h-full object-cover grayscale opacity-50" alt="Sede Central" />
+          <div className="absolute inset-0 flex items-center justify-center p-6">
+            <div className="bg-white/90 backdrop-blur-md p-8 sm:p-10 rounded-[3rem] shadow-premium border border-white/20 text-center max-w-md">
+              <MapPin className="w-10 h-10 sm:w-12 sm:h-12 text-accent mx-auto mb-4" />
+              <h3 className="text-xl sm:text-2xl font-black text-foreground mb-2">Sede Central</h3>
+              <p className="text-sm sm:text-base text-muted-foreground font-medium">Calle Rinconada 121, La Molina, Lima</p>
             </div>
           </div>
         </div>

@@ -44,7 +44,7 @@ export function Hero() {
             opacity: { duration: 0.8, delay: 0.4 },
             y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.4 }
           }}
-          className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-[0.9] mb-8 tracking-tighter"
+          className="text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-[0.9] mb-8 tracking-tighter"
         >
           {t.hero.title.split(' ').map((word, i) => (
             <span key={i} className={i === 0 ? "text-white" : "text-white/90 block sm:inline"}>

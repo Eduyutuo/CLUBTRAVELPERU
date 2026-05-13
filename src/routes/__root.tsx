@@ -71,15 +71,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=5" },
+      { title: "Club Travel Perú | Experiencias de Lujo en los Andes" },
+      { name: "description", content: "Expertos en turismo receptivo en Perú y Bolivia. Ofrecemos tours personalizados a Machu Picchu, Salar de Uyuni y más con servicio premium." },
+      { name: "author", content: "Club Travel Perú" },
+      { property: "og:title", content: "Club Travel Perú | Travel & Expeditions" },
+      { property: "og:description", content: "Descubre el corazón de los Andes con expediciones diseñadas a medida." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
@@ -96,7 +95,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
         <HeadContent />
       </head>
@@ -120,14 +119,14 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <I18nProvider>
-        <div className="min-h-screen bg-background">
+        <div className="min-h-screen bg-background overflow-x-hidden max-w-[100vw]">
           <Navbar />
           <main>
             <Outlet />
           </main>
           <Footer />
           <WhatsAppButton />
-          <Toaster position="top-center" />
+          <Toaster position="top-center" richColors />
         </div>
       </I18nProvider>
     </QueryClientProvider>
