@@ -25,7 +25,8 @@ const dict = {
       title: "Nuestros Tours Estrella",
       subtitle: "Rutas favoritas de nuestros viajeros, listas para inspirar tu próxima aventura.",
       duration: "Días",
-      cta: "Ver Itinerario completo",
+      cta: "Ver Itinerario",
+      itineraryAlert: "Itinerario detallado disponible al solicitar cotización:",
     },
     contact: {
       eyebrow: "Contacto",
@@ -69,7 +70,8 @@ const dict = {
       title: "Our Signature Tours",
       subtitle: "Traveler favorites, ready to inspire your next adventure.",
       duration: "Days",
-      cta: "View full itinerary",
+      cta: "View Itinerary",
+      itineraryAlert: "Detailed itinerary available upon quote request:",
     },
     contact: {
       eyebrow: "Contact",
