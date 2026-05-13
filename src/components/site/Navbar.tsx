@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useI18n } from "@/lib/i18n";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const links = [
   { id: "inicio", key: "home" as const },
@@ -28,9 +29,9 @@ export function Navbar() {
         scrolled ? "bg-background/85 backdrop-blur-lg border-b shadow-sm" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#inicio" className={`font-bold tracking-tight text-sm md:text-base ${scrolled ? "text-foreground" : "text-white"}`}>
-          INVERSIONES <span className="text-accent">ELSA MARÍA</span>
+      <div className="container mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="#inicio" className="flex items-center gap-2">
+          <img src={logo} alt="Club Travel Peru" className="h-14 w-auto object-contain" />
         </a>
 
         <nav className="hidden md:flex items-center gap-8">
