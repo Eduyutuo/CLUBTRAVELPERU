@@ -38,15 +38,43 @@ export function About() {
               {t.about.title}
             </h2>
           </motion.div>
-          <motion.p 
+          <motion.div 
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="text-base md:text-lg text-muted-foreground leading-relaxed md:pt-4"
+            className="space-y-4"
           >
-            {t.about.body}
-          </motion.p>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              {t.about.body}
+            </p>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              {t.about.body2}
+            </p>
+          </motion.div>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="p-8 rounded-3xl bg-primary/5 border border-primary/10"
+          >
+            <h3 className="text-2xl font-bold text-primary mb-4">{t.about.mission.title}</h3>
+            <p className="text-muted-foreground leading-relaxed italic">"{t.about.mission.text}"</p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="p-8 rounded-3xl bg-accent/5 border border-accent/10"
+          >
+            <h3 className="text-2xl font-bold text-accent mb-4">{t.about.vision.title}</h3>
+            <p className="text-muted-foreground leading-relaxed italic">"{t.about.vision.text}"</p>
+          </motion.div>
         </div>
 
         <motion.div 

@@ -12,8 +12,11 @@ const dict = {
     },
     about: {
       eyebrow: "Sobre nosotros",
-      title: "15+ años creando rutas seguras y memorables",
-      body: "En Club Travel Peru fusionamos la calidez de nuestra tierra con los estándares de servicio de clase mundial aprendidos en Disney. Nuestro propósito es transformar cada viaje en una experiencia mágica y sin preocupaciones.",
+      title: "Nuestra Historia",
+      body: "Tras años de experiencia en turismo en Disney, donde aprendimos el valor de crear experiencias memorables, decidimos regresar a Perú con una visión clara: transformar la forma de viajar en el país. Identificamos la falta de servicios turísticos personalizados, de alto nivel y con precios justos, enfocados realmente en el viajero. Así nació Club Travel Perú, con el objetivo de marcar la diferencia. Hoy, con más de 15 años de trayectoria, hemos superado desafíos como crisis globales y cierres de fronteras, fortaleciendo nuestra resiliencia y compromiso con cada cliente.",
+      body2: "Nos mantenemos fieles a nuestra esencia: crear viajes que no solo se recorren, sino que se viven y permanecen en el alma. Miles de viajeros ya confían en nosotros para hacer realidad experiencias inolvidables.",
+      mission: { title: "Misión", text: "Diseñamos viajes únicos y a medida en Perú, con pasión, ética y excelencia, para que cada viajero viva experiencias inolvidables y conecte profundamente con la esencia del destino." },
+      vision: { title: "Visión", text: "Ser la agencia líder en turismo personalizado en Perú, reconocida por transformar cada viaje en experiencias auténticas e inolvidables, con excelencia en el servicio, precios justos y un compromiso genuino con cada viajero." },
       benefits: [
         { title: "Asistencia 24/7", desc: "Acompañamiento constante durante toda tu estadía." },
         { title: "Calidad Disney", desc: "Atención al detalle y hospitalidad de nivel internacional." },
@@ -48,7 +51,7 @@ const dict = {
       links: "Enlaces",
       contact: "Contacto",
       follow: "Síguenos",
-      rights: "© 2024 Club Travel Peru. Todos los derechos reservados.",
+      rights: "Todos los derechos reservados.",
     },
   },
   en: {
@@ -60,8 +63,11 @@ const dict = {
     },
     about: {
       eyebrow: "About us",
-      title: "15+ years crafting safe, memorable journeys",
-      body: "At Club Travel Peru, we blend our local warmth with world-class service standards inspired by the Disney experience. Our goal is to transform every trip into a magical, worry-free adventure.",
+      title: "Our Story",
+      body: "After years of experience in Disney tourism, where we learned the value of creating memorable experiences, we decided to return to Peru with a clear vision: to transform the way of traveling in the country. We identified the lack of personalized, high-level tourist services with fair prices, truly focused on the traveler. Thus Club Travel Peru was born, with the objective of making a difference. Today, with more than 15 years of trajectory, we have overcome challenges such as global crises and border closures, strengthening our resilience and commitment to each client.",
+      body2: "We stay true to our essence: creating trips that are not just toured, but lived and remain in the soul. Thousands of travelers already trust us to make unforgettable experiences come true.",
+      mission: { title: "Mission", text: "We design unique and tailor-made trips in Peru, with passion, ethics and excellence, so that each traveler lives unforgettable experiences and connects deeply with the essence of the destination." },
+      vision: { title: "Vision", text: "To be the leading agency in personalized tourism in Peru, recognized for transforming each trip into authentic and unforgettable experiences, with excellence in service, fair prices and a genuine commitment to each traveler." },
       benefits: [
         { title: "24/7 Assistance", desc: "Constant support throughout your entire stay." },
         { title: "Disney Quality", desc: "Attention to detail and world-class hospitality." },
@@ -96,7 +102,7 @@ const dict = {
       links: "Links",
       contact: "Contact",
       follow: "Follow us",
-      rights: "© 2024 Club Travel Peru. All rights reserved.",
+      rights: "All rights reserved.",
     },
   },
 } as const;
