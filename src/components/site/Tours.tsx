@@ -88,7 +88,7 @@ export function Tours({ limit }: { limit?: number }) {
                 </a>
               </div>
 
-              <div className="p-8 flex flex-col flex-1">
+              <div className="p-6 sm:p-8 flex flex-col flex-1">
                 <div className="mb-4 flex items-center justify-between">
                   <span className="text-[10px] font-bold text-accent uppercase tracking-widest">{tour.code}</span>
                   <span className="text-sm font-semibold text-primary">USD {tour.prices[0]?.price || "---"}</span>
@@ -97,19 +97,19 @@ export function Tours({ limit }: { limit?: number }) {
                   {lang === "es" ? tour.title.es : tour.title.en}
                 </h3>
                 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="flex flex-col min-[450px]:grid min-[450px]:grid-cols-2 gap-3 min-[450px]:gap-4 mt-auto">
                   <Button
                     variant="outline"
-                    className="rounded-full border-primary text-primary hover:bg-primary hover:text-white transition-all font-semibold"
+                    className="rounded-full border-primary text-primary hover:bg-primary hover:text-white transition-all font-semibold h-11 text-xs min-[450px]:text-sm"
                     asChild
                   >
-                    <Link to={`/tours/${tour.id}`}>{t.tours.cta}</Link>
+                    <Link to={`/tours/${tour.id}`} className="truncate px-2">{t.tours.cta}</Link>
                   </Button>
                   <Button
-                    className="rounded-full bg-accent hover:bg-accent/90 text-white shadow-sm font-semibold"
+                    className="rounded-full bg-accent hover:bg-accent/90 text-white shadow-sm font-semibold h-11 text-xs min-[450px]:text-sm"
                     asChild
                   >
-                    <a href={`https://wa.me/51929435139?text=Hola, quiero reservar el tour: ${lang === "es" ? tour.title.es : tour.title.en}`} target="_blank" rel="noreferrer">
+                    <a href={`https://wa.me/51929435139?text=Hola, quiero reservar el tour: ${lang === "es" ? tour.title.es : tour.title.en}`} target="_blank" rel="noreferrer" className="truncate px-2">
                       {t.tours.reserve}
                     </a>
                   </Button>
