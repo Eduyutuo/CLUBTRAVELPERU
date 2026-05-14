@@ -132,7 +132,7 @@ export function Navbar() {
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-2">
                   <Globe className="w-4 h-4 text-accent" />
-                  <span className="text-xs font-black text-muted-foreground uppercase tracking-[0.2em]">Seleccionar Idioma</span>
+                  <span className="text-xs font-black text-muted-foreground uppercase tracking-[0.2em]">{t.nav.selectLanguage}</span>
                 </div>
                 <div className="flex gap-3">
                   {(["es", "en"] as const).map((l) => (
@@ -143,10 +143,11 @@ export function Navbar() {
                         lang === l ? "bg-accent text-white border-accent shadow-premium" : "border-border/50 text-muted-foreground hover:border-accent/30"
                       }`}
                     >
-                      {l === "es" ? "Español" : "English"}
+                      {l === "es" ? t.nav.es : t.nav.en}
                     </button>
                   ))}
                 </div>
+
               </div>
               <Button asChild className="bg-accent hover:bg-accent/90 text-white rounded-[2rem] h-16 text-lg font-black shadow-premium mt-4">
                 <Link to="/contact" onClick={() => setOpen(false)}>{t.nav.cta}</Link>

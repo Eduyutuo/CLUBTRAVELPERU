@@ -43,8 +43,8 @@ export function Contact() {
   };
 
   return (
-    <section id="contacto" className="py-24 md:py-32 bg-muted/30 relative overflow-hidden">
-      <div className="container mx-auto px-6 relative z-10">
+    <section id="contacto" className="py-24 bg-muted/30 relative overflow-hidden">
+      <div className="container mx-auto px-12 md:px-24 max-w-7xl relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -57,7 +57,7 @@ export function Contact() {
               <span className="text-xs font-bold tracking-[0.3em] uppercase text-accent mb-4 block">
                 {t.contact.eyebrow}
               </span>
-              <h2 className="text-4xl md:text-6xl font-bold text-foreground leading-tight tracking-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-foreground leading-tight tracking-tight">
                 {t.contact.title}
               </h2>
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-md">
@@ -67,9 +67,9 @@ export function Contact() {
 
             <div className="grid gap-6">
               {[
-                { icon: Phone, label: "Teléfono / WhatsApp", value: "+51 929 435 139", color: "text-green-600" },
-                { icon: Mail, label: "Correo Electrónico", value: "clubtravelperu1@gmail.com", color: "text-blue-600" },
-                { icon: MapPin, label: "Oficina Central", value: "Calle Rinconada 121, La Molina, Lima", color: "text-accent" },
+                { icon: Phone, label: t.contact.infoLabels.phone, value: "+51 929 435 139" },
+                { icon: Mail, label: t.contact.infoLabels.email, value: "clubtravelperu1@gmail.com" },
+                { icon: MapPin, label: t.contact.infoLabels.office, value: "Calle Rinconada 121, La Molina, Lima" },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-5 p-6 bg-card border border-border/50 rounded-3xl shadow-sm hover:shadow-md transition-all group">
                   <div className={`w-12 h-12 rounded-2xl bg-muted flex items-center justify-center transition-colors group-hover:bg-accent group-hover:text-white`}>
@@ -86,8 +86,8 @@ export function Contact() {
             <div className="bg-accent/10 p-8 rounded-[2rem] border border-accent/20 flex items-start gap-4">
               <MessageSquare className="w-6 h-6 text-accent mt-1" />
               <div>
-                <h4 className="font-bold text-foreground">Respuesta en menos de 1 hora</h4>
-                <p className="text-sm text-muted-foreground">Nuestro equipo de expedición está listo para ayudarte a planificar tu próxima gran aventura.</p>
+                <h4 className="font-bold text-foreground">{t.contact.guarantee.title}</h4>
+                <p className="text-sm text-muted-foreground">{t.contact.guarantee.text}</p>
               </div>
             </div>
           </motion.div>
@@ -108,7 +108,7 @@ export function Contact() {
                   <Input 
                     id="name" 
                     {...register("name")} 
-                    placeholder="Tu nombre"
+                    placeholder={t.contact.placeholders.name}
                     className={`h-12 rounded-xl border-border/50 bg-muted/20 px-4 focus:ring-accent ${errors.name ? "border-destructive" : ""}`} 
                   />
                   {errors.name && <p className="text-[10px] text-destructive font-bold uppercase ml-1">{errors.name.message}</p>}
@@ -119,7 +119,7 @@ export function Contact() {
                     id="email" 
                     type="email" 
                     {...register("email")} 
-                    placeholder="correo@ejemplo.com"
+                    placeholder={t.contact.placeholders.email}
                     className={`h-12 rounded-xl border-border/50 bg-muted/20 px-4 focus:ring-accent ${errors.email ? "border-destructive" : ""}`} 
                   />
                   {errors.email && <p className="text-[10px] text-destructive font-bold uppercase ml-1">{errors.email.message}</p>}
@@ -133,7 +133,7 @@ export function Contact() {
                     id="phone" 
                     type="tel" 
                     {...register("phone")} 
-                    placeholder="+51 ..."
+                    placeholder={t.contact.placeholders.phone}
                     className={`h-12 rounded-xl border-border/50 bg-muted/20 px-4 focus:ring-accent ${errors.phone ? "border-destructive" : ""}`} 
                   />
                   {errors.phone && <p className="text-[10px] text-destructive font-bold uppercase ml-1">{errors.phone.message}</p>}
@@ -145,13 +145,22 @@ export function Contact() {
                     {...register("destination")}
                     className={`flex h-12 w-full rounded-xl border border-border/50 bg-muted/20 px-4 py-1 text-sm shadow-sm transition-all focus:ring-2 focus:ring-accent outline-none appearance-none ${errors.destination ? 'border-destructive' : ''}`}
                   >
-                    <option value="">{lang === "es" ? "Seleccione destino..." : "Select destination..."}</option>
+                    <option value="">{t.contact.placeholders.destination}</option>
                     {t.contact.destinations.map((d) => (
                       <option key={d} value={d}>{d}</option>
                     ))}
                   </select>
                   {errors.destination && <p className="text-[10px] text-destructive font-bold uppercase ml-1">{errors.destination.message}</p>}
                 </div>
+              </div>
+
+              <div className="space-y-3">
+                <Label htmlFor="message" className="text-xs font-bold uppercase tracking-widest ml-1">{t.contact.message}</Label>
+                <textarea
+                  id="message"
+                  placeholder={t.contact.placeholders.message}
+                  className="flex min-h-[120px] w-full rounded-xl border border-border/50 bg-muted/20 px-4 py-3 text-sm shadow-sm transition-all focus:ring-2 focus:ring-accent outline-none resize-none"
+                />
               </div>
               
               <Button
@@ -163,7 +172,7 @@ export function Contact() {
                 {submitting ? (
                   <span className="flex items-center gap-2">
                     <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    {lang === "es" ? "Enviando..." : "Sending..."}
+                    {t.contact.sending}
                   </span>
                 ) : (
                   <>
@@ -173,6 +182,7 @@ export function Contact() {
               </Button>
             </form>
           </motion.div>
+
         </div>
       </div>
     </section>

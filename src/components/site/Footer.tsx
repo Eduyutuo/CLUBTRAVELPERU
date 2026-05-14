@@ -73,12 +73,12 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-4">
-            <h4 className="text-xs font-black uppercase tracking-[0.3em] text-accent mb-8">Síguenos</h4>
-            <p className="text-white/60 mb-6 font-medium leading-relaxed">Únete a nuestra comunidad de aventureros y descubre lo mejor de los Andes.</p>
+            <h4 className="text-xs font-black uppercase tracking-[0.3em] text-accent mb-8">{t.footer.follow}</h4>
+            <p className="text-white/60 mb-6 font-medium leading-relaxed">{t.footer.followText}</p>
             <div className="flex gap-4">
               {[
                 { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/Clubtravelperu" },
-                { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/clubtravelperu" }, // Placeholder as none provided
+                { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/clubtravelperu" },
                 { 
                   icon: () => (
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
@@ -103,7 +103,7 @@ export function Footer() {
             </div>
             
             <div className="mt-12 bg-white/5 p-6 rounded-[2rem] border border-white/10">
-              <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-3">Información Corporativa</p>
+              <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-3">{t.footer.corpInfo}</p>
               <div className="space-y-1">
                 <p className="text-xs font-bold text-white/80 uppercase tracking-tight">INVERSIONES ELSA MARIA SAC</p>
                 <p className="text-xs text-white/60">RUC: 20610729968</p>
@@ -115,14 +115,15 @@ export function Footer() {
 
         <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-xs font-medium text-white/40">
-            © {new Date().getFullYear()} Club Travel Perú – Todos los derechos reservados.
+            © {new Date().getFullYear()} Club Travel Perú – {t.footer.rights}
           </p>
           <div className="flex gap-8">
-            <a href="#" className="text-xs font-bold text-white/40 hover:text-accent uppercase tracking-widest transition-colors">Términos</a>
-            <a href="#" className="text-xs font-bold text-white/40 hover:text-accent uppercase tracking-widest transition-colors">Privacidad</a>
-            <a href="#" className="text-xs font-bold text-white/40 hover:text-accent uppercase tracking-widest transition-colors">Cookies</a>
+            <a href="#" className="text-xs font-bold text-white/40 hover:text-accent uppercase tracking-widest transition-colors">{t.footer.terms}</a>
+            <a href="#" className="text-xs font-bold text-white/40 hover:text-accent uppercase tracking-widest transition-colors">{t.footer.privacy}</a>
+            <a href="#" className="text-xs font-bold text-white/40 hover:text-accent uppercase tracking-widest transition-colors">{t.footer.cookies}</a>
           </div>
         </div>
+
       </div>
     </footer>
   );

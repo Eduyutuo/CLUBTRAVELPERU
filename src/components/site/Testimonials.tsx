@@ -82,15 +82,14 @@ export function Testimonials() {
   return (
     <section
       id="testimonios"
-      className="py-24 md:py-32 relative overflow-hidden"
-      style={{ background: "var(--gradient-hero, #0a1628)" }}
+      className="py-24 relative overflow-hidden bg-[#0a1a14]"
     >
-      {/* decorative */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none"
-        style={{ backgroundImage: "radial-gradient(circle at 20% 50%, #d4a853 0%, transparent 60%), radial-gradient(circle at 80% 30%, #7c6a3e 0%, transparent 50%)" }}
+      {/* decorative gradients for depth */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none"
+        style={{ backgroundImage: "radial-gradient(circle at 10% 20%, var(--accent) 0%, transparent 40%), radial-gradient(circle at 90% 80%, var(--primary) 0%, transparent 40%)" }}
       />
 
-      <div className="container mx-auto px-6 relative">
+      <div className="container mx-auto px-12 md:px-24 max-w-7xl relative">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -99,22 +98,23 @@ export function Testimonials() {
           transition={{ duration: 0.6 }}
           className="max-w-2xl mx-auto text-center mb-14"
         >
-          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-accent">
+          <span className="text-xs font-black tracking-[0.4em] uppercase text-accent mb-4 block">
             {t.testimonials.eyebrow}
           </span>
-          <h2 className="mt-4 text-3xl md:text-5xl font-bold text-white leading-tight">
+          <h2 className="text-4xl md:text-5xl font-black text-white leading-tight tracking-tighter">
             {t.testimonials.title}
           </h2>
           {/* trust badges */}
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-sm text-white/60">
-            <span className="flex items-center gap-1">
-              <Star className="w-4 h-4 fill-amber-400 text-amber-400" /> 5.0 · Google Reviews
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-8 text-xs font-bold text-white/60 uppercase tracking-widest">
+            <span className="flex items-center gap-2">
+              <Star className="w-4 h-4 fill-amber-400 text-amber-400" /> {t.testimonials.trustBadges.reviews}
             </span>
-            <span>·</span>
-            <span>+15 años de trayectoria</span>
-            <span>·</span>
-            <span>Miles de viajeros satisfechos</span>
+            <span className="w-1 h-1 rounded-full bg-white/30" />
+            <span>{t.testimonials.trustBadges.years}</span>
+            <span className="w-1 h-1 rounded-full bg-white/30" />
+            <span>{t.testimonials.trustBadges.satisfied}</span>
           </div>
+
         </motion.div>
 
         {/* Cards */}
@@ -123,37 +123,34 @@ export function Testimonials() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8"
         >
           {items.map((item) => (
             <motion.div
               key={item.name}
               variants={cardVariant}
-              className="relative rounded-2xl p-6 flex flex-col gap-4 border border-white/10 bg-white/5 backdrop-blur-sm hover:border-accent/40 hover:-translate-y-1 transition-all duration-300"
+              className="relative rounded-[2.5rem] p-8 flex flex-col gap-6 border border-white/20 bg-white/10 backdrop-blur-md hover:border-accent transition-all duration-500 hover:-translate-y-2 group shadow-2xl"
             >
-              {/* quote icon */}
-              <Quote className="w-8 h-8 text-accent/30 shrink-0" />
+              <Quote className="w-10 h-10 text-accent/40 shrink-0 group-hover:text-accent transition-colors" />
 
-              {/* stars */}
-              <div className="flex gap-0.5">
+              <div className="flex gap-1">
                 {Array.from({ length: item.rating }).map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                 ))}
               </div>
 
-              {/* text */}
-              <p className="text-sm text-white/80 leading-relaxed flex-1">"{item.text}"</p>
+              <p className="text-base text-white leading-relaxed flex-1 font-medium italic">"{item.text}"</p>
 
-              {/* author */}
-              <div className="border-t border-white/10 pt-4 space-y-0.5">
-                <p className="font-semibold text-white text-sm">{item.name}</p>
-                <p className="text-xs text-white/50">{item.country}</p>
-                <p className="text-xs text-accent/80 font-medium">{item.tour}</p>
+              <div className="border-t border-white/10 pt-6 space-y-1">
+                <p className="font-black text-white text-base tracking-tight">{item.name}</p>
+                <p className="text-[10px] font-bold text-white/60 uppercase tracking-widest">{item.country}</p>
+                <p className="text-[10px] font-black text-accent uppercase tracking-widest">{item.tour}</p>
               </div>
             </motion.div>
           ))}
         </motion.div>
       </div>
     </section>
+
   );
 }

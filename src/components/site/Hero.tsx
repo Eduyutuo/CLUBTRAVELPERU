@@ -8,7 +8,7 @@ import { Link } from "@tanstack/react-router";
 export function Hero() {
   const { t, lang } = useI18n();
   return (
-    <section id="inicio" className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
+    <section id="inicio" className="relative h-screen flex items-center justify-center overflow-hidden snap-start">
       <motion.img
         initial={{ scale: 1.15 }}
         animate={{ scale: 1 }}
@@ -17,23 +17,11 @@ export function Hero() {
         alt="Paisaje majestuoso de los Andes peruanos"
         className="absolute inset-0 w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-background/80" />
-      <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/10" />
 
-      <div className="relative z-10 container mx-auto px-6 text-center text-white max-w-5xl pt-20">
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex items-center justify-center gap-2 mb-6"
-        >
-          <div className="h-[1px] w-8 bg-accent" />
-          <span className="text-xs font-bold tracking-[0.3em] uppercase text-accent-foreground/90 bg-accent/20 backdrop-blur-md px-4 py-1.5 rounded-full border border-accent/30">
-            {lang === "es" ? "Perú · Bolivia · Andes" : "Peru · Bolivia · Andes"}
-          </span>
-          <div className="h-[1px] w-8 bg-accent" />
-        </motion.div>
-        
+      <div className="relative z-10 container mx-auto px-6 text-center text-white max-w-5xl pt-52">
+
+
         <motion.h1 
           initial={{ opacity: 0, y: 30 }}
           animate={{ 
@@ -82,7 +70,7 @@ export function Hero() {
           
           <div className="flex items-center gap-2 text-white/70 text-sm font-medium">
             <MapPin className="w-4 h-4 text-accent" />
-            {lang === "es" ? "Cusco, Perú" : "Cusco, Peru"}
+            {t.hero.location}
           </div>
         </motion.div>
       </div>
@@ -94,10 +82,11 @@ export function Hero() {
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3"
       >
         <span className="text-white/50 text-[10px] tracking-[0.4em] uppercase font-bold">
-          {lang === "es" ? "Explora" : "Explore"}
+          {t.hero.scroll}
         </span>
         <div className="w-[1px] h-12 bg-gradient-to-b from-accent to-transparent" />
       </motion.div>
+
     </section>
   );
 }

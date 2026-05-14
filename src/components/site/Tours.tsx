@@ -25,8 +25,8 @@ export function Tours({ limit }: { limit?: number }) {
   const displayedTours = limit ? toursData.slice(0, limit) : toursData;
 
   return (
-    <section id="tours" className="py-24 md:py-32 bg-muted/30">
-      <div className="container mx-auto px-6">
+    <section id="tours" className="py-24 bg-muted/30">
+      <div className="container mx-auto px-12 md:px-24 max-w-7xl">
         <div className="flex flex-col md:flex-row items-end justify-between gap-8 mb-20">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
@@ -37,7 +37,7 @@ export function Tours({ limit }: { limit?: number }) {
             <span className="text-xs font-black tracking-[0.4em] uppercase text-accent mb-6 block">
               {t.tours.eyebrow}
             </span>
-            <h2 className="text-4xl md:text-6xl font-black text-foreground tracking-tighter leading-none">
+            <h2 className="text-3xl md:text-5xl font-black text-foreground tracking-tighter leading-none">
               {t.tours.title}
             </h2>
           </motion.div>
@@ -97,23 +97,26 @@ export function Tours({ limit }: { limit?: number }) {
                   {lang === "es" ? tour.title.es : tour.title.en}
                 </h3>
                 
-                <div className="flex flex-col min-[450px]:grid min-[450px]:grid-cols-2 gap-3 min-[450px]:gap-4 mt-auto">
+                <div className="flex flex-col sm:grid sm:grid-cols-[1.4fr_0.6fr] gap-3 mt-auto">
                   <Button
                     variant="outline"
-                    className="rounded-full border-primary text-primary hover:bg-primary hover:text-white transition-all font-semibold h-11 text-xs min-[450px]:text-sm"
+                    className="rounded-full border-primary/40 text-primary hover:bg-primary hover:text-white transition-all font-black h-12 text-[11px] uppercase tracking-wider"
                     asChild
                   >
-                    <Link to={`/tours/${tour.id}`} className="truncate px-2">{t.tours.cta}</Link>
+                    <Link to={`/tours/${tour.id}`} className="px-4 text-center whitespace-nowrap">
+                      {t.tours.cta}
+                    </Link>
                   </Button>
                   <Button
-                    className="rounded-full bg-accent hover:bg-accent/90 text-white shadow-sm font-semibold h-11 text-xs min-[450px]:text-sm"
+                    className="rounded-full bg-accent hover:bg-accent/90 text-white shadow-md font-black h-12 text-[11px] uppercase tracking-wider"
                     asChild
                   >
-                    <a href={`https://wa.me/51929435139?text=Hola, quiero reservar el tour: ${lang === "es" ? tour.title.es : tour.title.en}`} target="_blank" rel="noreferrer" className="truncate px-2">
+                    <a href={`https://wa.me/51929435139?text=Hola, quiero reservar el tour: ${lang === "es" ? tour.title.es : tour.title.en}`} target="_blank" rel="noreferrer" className="px-4 text-center">
                       {t.tours.reserve}
                     </a>
                   </Button>
                 </div>
+
               </div>
             </motion.article>
           ))}
