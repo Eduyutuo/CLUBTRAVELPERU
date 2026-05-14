@@ -18,9 +18,9 @@ function TourDetail() {
   if (!tour) {
     return (
       <div className="min-h-[70vh] flex flex-col items-center justify-center px-6 text-center">
-        <h1 className="text-3xl font-bold">Tour no encontrado</h1>
+        <h1 className="text-3xl font-bold">{t.tourDetail.notFound}</h1>
         <Button asChild className="mt-4 rounded-full">
-          <Link to="/">Volver al inicio</Link>
+          <Link to="/">{t.tourDetail.backHome}</Link>
         </Button>
       </div>
     );
@@ -30,13 +30,14 @@ function TourDetail() {
     <div className="bg-background">
       <main>
         {/* Immersive Hero Section */}
-        <section className="relative w-full h-[60vh] md:h-[75vh] overflow-hidden">
+        <section className="relative w-full h-[85vh] md:h-screen overflow-hidden">
           <img
             src={tour.img}
             alt={lang === "es" ? tour.title.es : tour.title.en}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
           
           <div className="absolute bottom-0 inset-x-0 pb-12 md:pb-20">
             <div className="container mx-auto px-6">
@@ -46,7 +47,7 @@ function TourDetail() {
               >
                 <ArrowLeft className="w-5 h-5 mr-2" />
                 <span className="font-semibold text-sm uppercase tracking-widest">
-                  {lang === "es" ? "Explorar más tours" : "Explore more tours"}
+                  {t.tourDetail.exploreMore}
                 </span>
               </Link>
               
@@ -74,13 +75,13 @@ function TourDetail() {
                   <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10">
                     <Clock className="w-5 h-5 text-accent" />
                     <span className="text-sm font-bold uppercase tracking-wide">
-                      {tour.durationDays} {lang === "es" ? (tour.durationDays === 1 ? "Día" : "Días") : (tour.durationDays === 1 ? "Day" : "Days")}
+                      {tour.durationDays} {tour.durationDays === 1 ? t.tourDetail.day : t.tourDetail.days}
                     </span>
                   </div>
                   <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10">
                     <Users className="w-5 h-5 text-accent" />
                     <span className="text-sm font-bold uppercase tracking-wide">
-                      Min. {tour.minPeople} {lang === "es" ? "Pers." : "People"}
+                      Min. {tour.minPeople} {t.tourDetail.pers}
                     </span>
                   </div>
                 </div>
@@ -105,7 +106,7 @@ function TourDetail() {
                   <ShieldCheck className="w-6 h-6" />
                 </div>
                 <h2 className="text-3xl font-bold text-foreground tracking-tight">
-                  {lang === "es" ? "Resumen de la Experiencia" : "Experience Overview"}
+                  {t.tourDetail.overview}
                 </h2>
               </div>
               <p className="text-xl text-muted-foreground leading-relaxed font-medium">
@@ -125,7 +126,7 @@ function TourDetail() {
                     <Calendar className="w-6 h-6" />
                   </div>
                   <h2 className="text-3xl font-bold text-foreground tracking-tight">
-                    {lang === "es" ? "Itinerario Detallado" : "Detailed Itinerary"}
+                    {t.tourDetail.itinerary}
                   </h2>
                 </div>
                 
@@ -162,7 +163,7 @@ function TourDetail() {
                     <div className="w-10 h-10 bg-primary/20 rounded-xl flex items-center justify-center">
                       <Check className="w-5 h-5" />
                     </div>
-                    {lang === "es" ? "Qué incluye" : "What's included"}
+                    {t.tourDetail.includes}
                   </h3>
                   <ul className="space-y-4">
                     {tour.includes.map((inc, i) => (
@@ -179,7 +180,7 @@ function TourDetail() {
                     <div className="w-10 h-10 bg-muted rounded-xl flex items-center justify-center">
                       <X className="w-5 h-5" />
                     </div>
-                    {lang === "es" ? "No incluye" : "Not included"}
+                    {t.tourDetail.excludes}
                   </h3>
                   <ul className="space-y-4">
                     {tour.excludes.map((exc, i) => (
@@ -199,16 +200,16 @@ function TourDetail() {
             <div className="sticky top-28 space-y-6">
               <div className="bg-card border-2 border-accent/20 rounded-[2.5rem] p-10 shadow-premium">
                 <div className="mb-8">
-                  <span className="text-[10px] font-bold text-accent uppercase tracking-[0.2em] mb-2 block">Precio desde</span>
+                  <span className="text-[10px] font-bold text-accent uppercase tracking-[0.2em] mb-2 block">{t.tourDetail.priceFrom}</span>
                   <div className="flex items-baseline gap-2">
                     <span className="text-5xl font-black text-foreground">USD {tour.prices[0]?.price || "---"}</span>
-                    <span className="text-muted-foreground font-semibold">/ pers.</span>
+                    <span className="text-muted-foreground font-semibold">{t.tourDetail.pricePerPers}</span>
                   </div>
                 </div>
 
                 {tour.prices.length > 1 && (
                   <div className="mb-10 space-y-4">
-                    <h4 className="font-bold text-sm text-foreground uppercase tracking-wider border-b pb-3 border-border/50">Opciones de Tarifa</h4>
+                    <h4 className="font-bold text-sm text-foreground uppercase tracking-wider border-b pb-3 border-border/50">{t.tourDetail.rateOptions}</h4>
                     {tour.prices.map((p, i) => (
                       <div key={i} className="flex justify-between items-center bg-muted/30 p-4 rounded-2xl hover:bg-muted transition-colors">
                         <span className="text-sm font-semibold text-muted-foreground">{lang === "es" ? p.label.es : p.label.en}</span>
@@ -222,11 +223,11 @@ function TourDetail() {
                   <Button size="lg" className="w-full bg-accent hover:bg-accent/90 text-white rounded-2xl h-16 text-lg font-bold shadow-premium transition-all hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-3" asChild>
                     <a href={`https://wa.me/51929435139?text=Hola, quiero más información sobre el tour: ${lang === "es" ? tour.title.es : tour.title.en}`} target="_blank" rel="noreferrer">
                       <MessageCircle className="w-6 h-6 fill-current" />
-                      {lang === "es" ? "Reservar por WhatsApp" : "Book via WhatsApp"}
+                      {t.tourDetail.bookWhatsapp}
                     </a>
                   </Button>
                   <p className="text-center text-[11px] text-muted-foreground font-medium px-4">
-                    Confirmación inmediata · Sin cargos ocultos · Soporte 24/7
+                    {t.tourDetail.guarantees}
                   </p>
                 </div>
               </div>
@@ -237,12 +238,13 @@ function TourDetail() {
                   <ShieldCheck className="w-10 h-10" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-lg leading-tight">Viaje Protegido</h4>
-                  <p className="text-sm text-white/70">Seguro de viaje y asistencia local permanente incluida en todos nuestros servicios.</p>
+                  <h4 className="font-bold text-lg leading-tight">{t.tourDetail.protectedTravel.title}</h4>
+                  <p className="text-sm text-white/70">{t.tourDetail.protectedTravel.text}</p>
                 </div>
               </div>
             </div>
           </div>
+
         </section>
       </main>
     </div>

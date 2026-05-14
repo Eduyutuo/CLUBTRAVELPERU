@@ -105,11 +105,11 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="py-24 md:py-32 bg-background relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2" />
+    <section id="about" className="py-24 bg-muted/20 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-12 md:px-24 max-w-6xl relative z-10">
         <div className="grid lg:grid-cols-2 gap-20 items-center mb-32">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -119,30 +119,34 @@ export function About() {
             className="space-y-10"
           >
             <div>
-              <motion.span 
+              <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-xs font-black tracking-[0.4em] uppercase text-accent mb-6 block"
+                className="flex items-center gap-3 mb-6"
               >
-                {t.about.eyebrow}
-              </motion.span>
-              <h2 className="text-5xl md:text-7xl font-black text-foreground leading-[1] tracking-tighter">
+                <div className="h-[2px] w-12 bg-accent" />
+                <span className="text-sm font-black tracking-[0.5em] uppercase text-accent">
+                  {t.about.eyebrow}
+                </span>
+              </motion.div>
+              <h2 className="text-5xl md:text-7xl font-black text-foreground leading-[1] tracking-tighter mb-4">
                 {t.about.title}
               </h2>
             </div>
             
             <div className="space-y-8">
-              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed font-medium">
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-medium text-justify">
                 {t.about.body}
               </p>
               <div className="pt-6">
-                <Button asChild className="rounded-full bg-primary text-white px-8 h-12 font-bold shadow-md hover:scale-105 transition-transform">
+                <Button asChild className="rounded-full bg-primary text-white px-10 h-14 text-lg font-bold shadow-xl hover:scale-105 transition-all hover:bg-primary/90">
                   <Link to="/about">{t.about.knowMore}</Link>
                 </Button>
               </div>
             </div>
           </motion.div>
+
 
           <motion.div 
             initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
@@ -159,10 +163,8 @@ export function About() {
                 alt="Exploración en los Andes" 
                 className="w-full h-full object-cover rounded-[3rem]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-[4rem]" />
             </div>
             
-            {/* Experience Badge */}
             <motion.div 
               initial={{ x: 20, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
@@ -172,13 +174,6 @@ export function About() {
               <span className="block text-4xl sm:text-6xl font-black text-accent leading-none tracking-tighter">15+</span>
               <span className="text-[10px] font-black text-muted-foreground uppercase tracking-[0.2em] mt-2 sm:mt-3 block">{t.about.yearsExperience}</span>
             </motion.div>
-
-            {/* Small Floating Element */}
-            <motion.div
-              animate={{ y: [0, -20, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-6 -right-6 w-32 h-32 bg-accent/20 backdrop-blur-xl rounded-[2rem] border border-white/20 z-0"
-            />
           </motion.div>
         </div>
 
@@ -194,7 +189,6 @@ export function About() {
           ))}
         </motion.div>
 
-        {/* Trust Bar / Legal Identity */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -225,5 +219,7 @@ export function About() {
         </motion.div>
       </div>
     </section>
+
+
   );
 }

@@ -233,7 +233,7 @@ function AboutPage() {
                     <CheckCircle2 className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-black text-xs uppercase tracking-widest text-muted-foreground mb-1">RUC</h4>
+                    <h4 className="font-black text-xs uppercase tracking-widest text-muted-foreground mb-1">{t.about.rucLabel}</h4>
                     <p className="text-xl font-bold text-foreground">20610729968</p>
                   </div>
                 </div>
@@ -256,13 +256,14 @@ function AboutPage() {
                 </div>
               </div>
               <p className="text-lg text-muted-foreground font-medium leading-relaxed italic">
-                "Nuestra meta no es solo vender tours, sino crear embajadores de la cultura peruana en todo el mundo."
+                "{t.about.quoteRep}"
               </p>
               <div className="pt-4 border-t border-border/50">
                 <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest">{t.about.businessLine}</p>
-                <p className="text-lg font-bold text-foreground">Turismo Receptivo Internacional</p>
+                <p className="text-lg font-bold text-foreground">{t.about.businessLineText}</p>
               </div>
             </motion.div>
+
           </div>
         </div>
       </section>
